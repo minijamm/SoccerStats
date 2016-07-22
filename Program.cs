@@ -19,20 +19,17 @@ namespace SoccerStats
             var file = new FileInfo(fileName);
             if (file.Exists)
             {
-                var reader = new StreamReader(file.FullName);
-                try
+                using (var reader = new StreamReader(file.FullName))
                 {
                     Console.SetIn(reader);
                     Console.WriteLine(Console.ReadLine());
 
                 }
-                finally
-                {
-                    reader.Close();
-                }
 
             }
-            
+          
+
+
         }
           
 
